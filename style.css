@@ -1,13 +1,38 @@
 body{
     margin: 0;
 }
+a{
+    text-decoration: none;
+
+}
+h1{
+    color: white;
+    font-size: 30px;
+    font-family: "Bitstream Charter";
+    text-align: center;
+}
+h2{
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+p{
+    font-weight: bolder;
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    text-indent: 20px;
+}
+a:hover{
+    color:#e6e6e6;
+}
 .menu{
     background-color:#282B33;
     margin: 0;
     padding: 0;
     list-style-type: none;
     width: 99.2vw;
-    height: 7vh;
+    height: 75px;
     text-space: 15px;
 }
 .menu_li a,p{
@@ -45,14 +70,32 @@ body{
 
 }
 
-a{
-    text-decoration: none;
 
-}
-a:hover{
-    color:#e6e6e6;
-}
 table{
     color: white;
     font-size: 15px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+.grid>div{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.flex > div {
+    color: white;
+    width: 33%;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
 }
