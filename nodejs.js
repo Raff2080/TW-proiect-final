@@ -22,7 +22,7 @@ server.use(expressLayouts)
 
 server.post("/profile.html",(req,res)=>{
     if(req.body.method==="0"){
-        if(!req.body.religion.match(/[0-9]*/)) {
+        if(req.body.religion.match(/[0-9]*/)) {
 
             users.push({
                 "name": req.body.name,
