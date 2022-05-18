@@ -1,3 +1,6 @@
+html{
+    height: 100%;
+}
 body{
     margin: 0;
 }
@@ -5,12 +8,21 @@ a{
     text-decoration: none;
 
 }
-h1{
+h1 {
     color: white;
     font-size: 30px;
     font-family: "Bitstream Charter";
     text-align: center;
+    animation-name: zoom;
+    animation-duration: 4s;
 }
+@keyframes zoom{
+    0%   {transform: scale(1) }
+    25%  {transform: scale(0.6)}
+    50%  {transform: scale(0.7)}
+    100% {transform: scale(1)}
+}
+
 h2,label{
     color: white;
     font-size: 30px;
@@ -117,3 +129,23 @@ table{
 
 
 }
+
+@media screen and (max-width: 800px) {
+   #comm {
+        width: 100%;
+    }
+}
+#btn{
+    transition: font-size 2s;
+    background-color: white;
+}
+#btn:hover{
+    font-size: larger;
+}
+#tmp{
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    color: white;
+}
+

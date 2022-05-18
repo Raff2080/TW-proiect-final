@@ -1,5 +1,6 @@
 
 let logged="no"
+let sec=0
 
 function init(){
 
@@ -53,7 +54,6 @@ function init(){
         li.append(a)
         document.body.children[0].children[0].append(li)
 
-
     }
 
 //display date
@@ -91,25 +91,61 @@ function init(){
 
         }
 
+        let y=localStorage.getItem("name")
+        if(y==="" || y===null)
+        {
+            y="Anonym"
+        }
+
+
+
+
+
+
         let  div=document.createElement("div")
-        div.innerHTML=comm
+        div.innerHTML=comm+"<br>\n<br>\n"+"Posted by:"+" "+y+" "+` at ${date}.`
         div.style.width="100%"
-        div.style.height="20px"
+        div.style.height="60px"
         div.style.border="1px solid black"
         div.style.backgroundColor="white"
         div.style.position="absolute"
         div.style.top=String(k)+"px"
         div.style.left="0"
         div.style.overflow="auto"
-        k+=20;
+        k+=60;
         localStorage.setItem("nr",k)
 
         if(comm!=null)
         document.querySelector("#comment").append(div)
 
     })
+        //delete comment
+    document.addEventListener("keydown",(e)=>{
+        if(e.key==="Delete"){
+            if(document.querySelector("#comment").children[0]!=null){
+                document.querySelector("#comment").children[0].remove()
+            }
+        }
+    })
+    //ftr stai pe pag
 
 
+    setInterval(()=>{
+        sec++
+        document.querySelector("#tmp").innerHTML=`Stai pe această pagină de ${sec} secunde.`
+
+    },1000)
+    setTimeout(()=>{
+        let cssbtn=window.getComputedStyle(document.body.querySelector("#btn"),null)
+
+        if(cssbtn.getPropertyValue("background-color")==="white"){
+            document.body.querySelector("#btn").style.backgroundColor="wheat"
+        }
+        else{
+            document.body.querySelector("#btn").style.backgroundColor="white"
+        }
+        alert("Felicitari esti al 1000000 vizitator pe pagina noastra!\nAi castigat speranta!\n Sa nu o folosesti toata intr.un singur loc!")
+    },5000)
 
 
 
