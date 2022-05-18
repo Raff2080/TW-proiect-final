@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function initt(){
+
+            localStorage.clear()
+
+            localStorage.setItem("name","req.body.name")
+            localStorage.setItem("email","req.body.email")
+            localStorage.setItem("religion","req.body.religion")
+
+            let h2=document.createElement("h2")
+            h2.innerHTML=`Name: ${localStorage.getItem("name")}`
+            document.body.append(h2)
+            document.body.append(document.createElement("br"))
+
+            let h21=document.createElement("h2")
+            h21.innerHTML=`Email: ${localStorage.getItem("email")}`
+            document.body.append(h21)
+            document.body.append(document.createElement("br"))
+
+            let h22=document.createElement("h2")
+            h22.innerHTML=`Religion: ${localStorage.getItem("religion")}`
+            document.body.append(h22)
+            document.body.append(document.createElement("br"))
+
+
+            //background color
+            document.body.style.backgroundColor=`rgba(${Math.floor(Math.random()*255)%140},${Math.floor(Math.random()*255)%180},${Math.floor(Math.random()*255)%220},${(Math.random()+0.6)/2})`
+            //logare(mai mult sau mai putin
+            if(!localStorage.getItem("name")){
+                let li=document.createElement("li")
+                let a=document.createElement("a")
+                a.innerHTML="Sign up"
+                a.href="./signUp.html"
+                li.className="menu_li"
+                li.style="float: right"
+                li.append(a)
+                document.body.children[0].children[0].append(li)
+
+
+                let li1=document.createElement("li")
+                let a1=document.createElement("a")
+                a1.innerHTML="Login"
+                a1.href="./login.html"
+                li1.className="menu_li"
+                li1.style="float: right"
+                li1.append(a1)
+                document.body.children[0].children[0].append(li1)
+
+            }
+            else{
+
+                let li1=document.createElement("li")
+                let a1=document.createElement("a")
+                a1.innerHTML="Logout"
+                a1.href="./home.html"
+                li1.className="menu_li"
+                li1.style="float: right"
+                li1.append(a1)
+                document.body.children[0].children[0].append(li1)
+
+                a1.addEventListener("click",(e)=>{
+                    localStorage.clear()
+                })
+
+                let li=document.createElement("li")
+                let a=document.createElement("a")
+                a.innerHTML=`Welcome, ${localStorage.getItem("name")}`
+                a.href="./profile.html"
+                li.className="menu_li"
+                li.style="float: right"
+                li.append(a)
+                document.body.children[0].children[0].append(li)
+
+
+            }
+
+//display date
+            let footer=document.querySelector("#ftr")
+            let p=document.createElement("p")
+            let today = new Date();
+            p.className="date"
+            p.style.float = "right"
+
+            footer.append(p)
+
+
+            let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+            document.querySelector(".date").textContent=date
+            document.body.append(footer)
+
+
+
+
+
+
+
+        }
+
+        window.onload=initt
+    </script>
+</head>
+
+<body>
+<!--Navbar-->
+<header>
+    <ul id="top" class="menu">
+        <li class="menu_li" ><a href="./home.html" style="font-size: 20px">Home</a></li>
+        <li class="menu_li"><a href="./christianity.html">Christianity</a></li>
+        <li class="menu_li"><a href="./islam.html">Islam</a></li>
+        <li class="menu_li"><a href="./hinduism.html">Hinduism </a></li>
+        <li class="menu_li"><a href="./buddishm.html">Buddhism</a></li>
+
+        <li class="menu_li"><a href="#" >Other religions</a>
+            <div class="menu_li_content">
+                <a href="https://en.wikipedia.org/wiki/Shinto">Shinto</a>
+                <a href="https://en.wikipedia.org/wiki/Taoism">Taoism</a>
+                <a href="https://en.wikipedia.org/wiki/West_African_Vodun">Vodou</a>
+                <a href="https://en.wikipedia.org/wiki/Sikhism">Sikhism</a>
+                <a href="https://en.wikipedia.org/wiki/Judaism">Judaism</a>
+                <a href="https://en.wikipedia.org/wiki/Spiritism">Spiritism</a>
+                <a href="https://en.wikipedia.org/wiki/Confucianism">Confucianism</a>
+                <a href="https://en.wikipedia.org/wiki/Bah%C3%A1%CA%BC%C3%AD_Faith">Confucim</a>
+            </div>
+        </li>
+
+    </ul></header>
+
+<h1>Profile</h1><br><hr><br>
+
+
+
+
+
+
+
+<footer id="ftr">
+    <hr>
+    <p style="float: left;">All rights reserved.</p>
+</footer>
+
+</body>
+</html>

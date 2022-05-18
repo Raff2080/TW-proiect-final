@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<!--Navbar-->
+<header>
+    <ul id="top" class="menu">
+        <li class="menu_li" ><a href="./home.html" style="font-size: 20px">Home</a></li>
+        <li class="menu_li"><a href="./christianity.html">Christianity</a></li>
+        <li class="menu_li"><a href="./islam.html">Islam</a></li>
+        <li class="menu_li"><a href="./hinduism.html">Hinduism </a></li>
+        <li class="menu_li"><a href="./buddishm.html">Buddhism</a></li>
+
+        <li class="menu_li"><a href="#" >Other religions</a>
+            <div class="menu_li_content">
+                <a href="https://en.wikipedia.org/wiki/Shinto">Shinto</a>
+                <a href="https://en.wikipedia.org/wiki/Taoism">Taoism</a>
+                <a href="https://en.wikipedia.org/wiki/West_African_Vodun">Vodou</a>
+                <a href="https://en.wikipedia.org/wiki/Sikhism">Sikhism</a>
+                <a href="https://en.wikipedia.org/wiki/Judaism">Judaism</a>
+                <a href="https://en.wikipedia.org/wiki/Spiritism">Spiritism</a>
+                <a href="https://en.wikipedia.org/wiki/Confucianism">Confucianism</a>
+                <a href="https://en.wikipedia.org/wiki/Bah%C3%A1%CA%BC%C3%AD_Faith">Confucim</a>
+            </div>
+        </li>
+
+
+    </ul></header><br>
+<h1 style=" font-size: 50px">Sign up</h1><br><hr> <br>
+<div style="height: 70%;width: 50%; margin: auto; text-align: center">
+    <form action="./profile.html" method="post" target="_self">
+
+        <div style="display: none">
+            <label for="method"></label>
+            <input type="text" for="method" id="method" name="method" value="0">
+        </div>
+
+
+        <div style="width: 100%;height: auto; padding: 7% 0">
+            <label for="name" style="font-size: 20px"  >Name</label><br>
+            <input  style="width: 60%;height: 30px; " type="text"  id="name" name="name" placeholder="Enter name..."><br>
+        </div>
+
+        <div style="width: 100%; margin: auto; text-align: center; padding: 7% 0">
+            <label style="font-size: 20px"  for="password">Password</label><br>
+            <input style="width: 60%; height: 30px;" type="password" for="password" id="password" name="password" placeholder="Enter password ..."><br>
+        </div>
+        <div style="width: 100%; margin: auto; text-align: center ; padding: 7% 0">
+
+            <label  style="font-size: 20px" for="email">Email</label><br>
+            <input style="width: 60%;height: 30px;" type="email" for="email" id="email" name="email" placeholder="Enter email...">
+        </div>
+        <div style="width: 100%; margin: auto; text-align: center ; padding: 7% 0">
+
+            <label  style="font-size: 20px" for="religion">Religion</label><br>
+            <input style="width: 60%;height: 30px;" type="text" for="religion" id="religion" name="religion" placeholder="Enter religion...">
+        </div>
+
+        <div  style="width: 60%; margin: auto; text-align: center ;">
+            <input type="submit" value="Sign in" style="width: 80px;height: 60px;border: 1px solid black; border-radius: 20%; float: right">
+        </div>
+    </form>
+</div>
+
+
+<script src="javascript.js"></script>
 
 </body>
 </html>
